@@ -8,7 +8,7 @@ module.exports = {
                 target:'https://piao.qunar.com',
                 changeOrigin:true,
                 pathRewrite:{
-                    '^/api':'/api'
+                    '^/api':''
                 }
             }
         }
