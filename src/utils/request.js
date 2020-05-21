@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const service = axios.create({
     // process.env.NODE_ENV === 'development' 来判断是否开发环境
-    baseURL,
+    baseURL:'https://piao.qunar.com',
     timeout: 5000
 });
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';

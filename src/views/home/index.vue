@@ -4,5 +4,11 @@
   </div>
 </template>
 <script>
-export default {}
+import {statisticalData} from '@/api/index.js'
+
+export default {
+  created() {
+    statisticalData()
+  }
+}
 </script>

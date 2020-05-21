@@ -2,15 +2,15 @@ module.exports = {
     assetsDir: 'public/guild',
     publicPath:'./',
     productionSourceMap: false,
-    // devServer: {
-    //     proxy : {
-    //         '/api':{
-    //             target:'http://ql.xqokami.com',
-    //             changeOrigin:false,
-    //             pathRewrite:{
-    //                 '^/api':'/aaaaa'
-    //             }
-    //         }
-    //     }
-    // }
+    devServer: {
+        proxy : {
+            '/api':{
+                target:'https://piao.qunar.com',
+                changeOrigin:true,
+                pathRewrite:{
+                    '^/api':'/api'
+                }
+            }
+        }
+    }
 }
