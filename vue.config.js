@@ -1,6 +1,6 @@
 module.exports = {
     assetsDir: 'public/guild',
-    publicPath:'./',
+    publicPath:'/app',
     productionSourceMap: false,
     devServer: {
         proxy : {

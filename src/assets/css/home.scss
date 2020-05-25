@@ -1,0 +1,248 @@
+.el-main {
+    padding: 0 !important;
+    .home {
+        .exhibition-warp {
+            .exhibition {
+                width: 100%;
+                height: 100%;
+                background-image: url('https://infoflow.baidu.com/data/img/banner.jpg');
+                background-size: 100% 100%;
+            }
+            .shade {
+                width: 100%;
+                height: 100%;
+                background-image: url('https://infoflow.baidu.com/data/img/icon-mask-dot.png');
+                background-repeat: repeat;
+                position: absolute;
+            }
+            .shade-color {
+                width: 100%;
+                height: 100%;
+                background-color: #000000;
+                opacity: 0.3;
+                position: absolute;
+            }
+            .exhibition-img {
+                width: 675px;
+                height: 108px;
+                position: absolute;
+                top: 42%;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 10;
+            }
+            .cursor {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 10;
+            }
+        }
+        .content-warp {
+            .block-wrapper {
+                height: 700px;
+                display: flex;
+                align-items: center;
+                position: relative;
+                justify-content: center;
+                .block {
+                    display: flex;
+                    justify-content: center;
+                    .img-metting {
+                        background-image: url('https://infoflow.baidu.com/2x/smart-metting.png');
+                        display: inline-block;
+                        width: 585px;
+                        height: 362px;
+                        background-size: 585px 362px;
+                    }
+                    .content-text {
+                        margin-top: 100px;
+                        .title {
+                            font-size: 36px;
+                            color: #348bf2;
+                        }
+                    }
+                    .img-communicate {
+                        background-image: url('https://infoflow.baidu.com/2x/communicate.png');
+                        display: inline-block;
+                        width: 585px;
+                        height: 362px;
+                        background-size: 585px 362px;
+                    }
+                    a {
+                        color: #378eef;
+                        font-size: 16px;
+                        display: block;
+                    }
+                }
+            }
+            .communicate {
+                background-color: #f6f6f6;
+                ul {
+                    margin-top: 50px;
+                    padding: 0;
+                    display: flex;
+                    li {
+                        text-align: center;
+                        .icon {
+                            display: inline-block;
+                            width: 42px;
+                            height: 42px;
+                            background-size: 100% 100%;
+                        }
+                        .text {
+                            display: block;
+                            font-size: 13px;
+                            color: #41586d;
+                            margin-top: 10px;
+                        }
+                    }
+                    .icon-hi {
+                        padding: 8px 33px 8px 0;
+                        .icon {
+                            background-image: url('https://infoflow.baidu.com/2x/icon-hi.png');
+                        }
+                    }
+                    .icon-communicate {
+                        padding: 8px 33px;
+                        border-left: 1px solid #a5bac6;
+                        border-right: 1px solid #a5bac6;
+                        .icon {
+                            background-image: url('https://infoflow.baidu.com/2x/icon-communicate-sm.png');
+                        }
+                    }
+                    .icon-groupchat {
+                        padding: 8px 0 8px 33px;
+                        .icon {
+                            background-image: url('https://infoflow.baidu.com/2x/icon-group.png');
+                        }
+                    }
+                }
+            }
+        }
+        .download {
+            height: 500px;
+            .block {
+                width: 100%;
+                text-align: center;
+                .title {
+                    font-size: 36px;
+                    color: #348bf2;
+                    margin-top: 55px;
+                }
+            }
+            ul {
+                display: inline-block;
+                overflow: hidden;
+                margin-top: 50px;
+                li {
+                    width: 270px;
+                    height: 228px;
+                    border: 1px solid #e3e3e3;
+                    text-align: center;
+                    box-sizing: border-box;
+                    background-color: #fff;
+                    float: left;
+                    position: relative;
+                    &:hover {
+                        .mask-download {
+                            top: 0 !important;
+                            transition: all 0.2s;
+                        }
+                        &.windows,
+                        &.osx {
+                            background-color: rgb(76, 140, 228) !important;
+                            transition: all 0.5s;
+                            span {
+                                color: #ffffff !important;
+                            }
+                            a {
+                                color: #ffffff !important;
+                            }
+                            .icon {
+                                display: none;
+                            }
+                            .icon-mask {
+                                display: inline-block;
+                            }
+                        }
+                    }
+                    .icon {
+                        display: inline-block;
+                        width: 50px;
+                        height: 50px;
+                        background-size: 100% 100%;
+                        margin: 46px auto 0;
+                    }
+                    &.ios {
+                        .icon {
+                            background-image: url('https://infoflow.baidu.com/2x/icon-ios.png');
+                        }
+                    }
+                    &.android {
+                        .icon {
+                            background-image: url('https://infoflow.baidu.com/2x/icon-android.png');
+                        }
+                    }
+                    &.windows {
+                        .icon {
+                            background-image: url('https://infoflow.baidu.com/2x/icon-windows.png');
+                        }
+                        .icon-mask {
+                            display: none;
+                            margin: 46px auto 0;
+                        }
+                    }
+                    &.osx {
+                        .icon {
+                            background-image: url('https://infoflow.baidu.com/2x/icon-osx.png');
+                        }
+                        .icon-mask {
+                            display: none;
+                            margin: 46px auto 0;
+                        }
+                    }
+                    .text {
+                        font-size: 20px;
+                        color: #91949b;
+                        margin-top: 46px;
+                        display: block;
+                    }
+                    .mask-download {
+                        width: 268px;
+                        height: 226px;
+                        position: absolute;
+                        background-color: #4c8ce4;
+                        top: 228px;
+                        left: 0;
+                        img {
+                            margin-top: 30px;
+                        }
+                        .download-text {
+                            color: #fff;
+                            margin-top: 20px;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+            a {
+                font-size: 12px !important;
+                color: #91949b !important;
+                margin-top: 13px;
+                display: block;
+            }
+            .code-intro {
+                background-image: url('https://infoflow.baidu.com/2x/code-intro.png');
+                display: inline-block;
+                width: 65px;
+                height: 65px;
+                background-size: 65px 65px;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+}

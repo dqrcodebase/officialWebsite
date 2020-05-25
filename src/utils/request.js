@@ -20,22 +20,7 @@ service.interceptors.request.use(
 );
 service.interceptors.response.use(
     response => {
-        loading.close();
         if (response.status === 200) {
-            if (response.data.error !== 0) {
-                if (response.data.redirect !== '') {
-                    setInterval(() => {
-                        second--;
-                        MessageBox(response.data.msg).then(() => {
-                            window.location.href = response.data.redirect;
-                        });
-                        if (second == 0) {
-                            // window.location.href = response.data.redirect;
-                        }
-                    }, 1000);
-                } else {
-                }
-            }
             return response.data;
         } else {
             Promise.reject();

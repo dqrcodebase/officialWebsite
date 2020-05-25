@@ -1,0 +1,17 @@
+.el-footer {
+    background-color: #5b6d81;
+    ul {
+        text-align: center;
+        margin-top: 20px;
+        li {
+            display: inline-block;
+            &.interval{
+              margin-left: 55px;
+            }
+            a {
+                font-size: 13px;
+                color: #a3b1bf;
+            }
+        }
+    }
+}

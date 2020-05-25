@@ -1,18 +1,15 @@
 <template>
-  <section class="app-main">
-     <router-view></router-view>
-  </section>
+    <el-main id='no-padding'>
+            <router-view></router-view>
+    </el-main>
 </template>
 
 <script>
 export default {
-  name: 'AppMain',
-  computed: {
-  }
-}
+    name: 'vmain',
+    computed: {}
+};
 </script>
-<style lang="less">
-.el-main{
-  padding-top: 80px;
-}
+<style lang="scss">
+@import '@/assets/css/main.scss';
 </style>

@@ -15,20 +15,20 @@ export default new Router({
             children: [
                 {
                     path: '/home',
-                    component: () => import(/* webpackChunkName: "dashboard" */ '@/views/home'),
+                    component: () => import('@/views/home'),
                     meta: { title: '首页' }
                 }
             ]
         },
         {
             path: '/404',
-            component: () => import(/* webpackChunkName: "404" */ '@/views/404'),
+            component: () => import('@/views/404'),
             meta: { title: '404' }
         },
         {
             path: '*',
             redirect: '/404'
         }
-    ]
-    // mode:'history'
+    ],
+    mode: 'history'
 });
