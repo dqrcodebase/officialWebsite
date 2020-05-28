@@ -2,6 +2,7 @@
     padding: 0 !important;
     .home {
         .exhibition-warp {
+          position: relative;
             .exhibition {
                 width: 100%;
                 height: 100%;
@@ -11,6 +12,7 @@
             .shade {
                 width: 100%;
                 height: 100%;
+                min-width: 1200px;
                 background-image: url('https://infoflow.baidu.com/data/img/icon-mask-dot.png');
                 background-repeat: repeat;
                 position: absolute;
@@ -18,6 +20,7 @@
             .shade-color {
                 width: 100%;
                 height: 100%;
+                min-width: 1200px;
                 background-color: #000000;
                 opacity: 0.3;
                 position: absolute;
@@ -57,7 +60,6 @@
                         background-size: 585px 362px;
                     }
                     .content-text {
-                        margin-top: 100px;
                         .title {
                             font-size: 36px;
                             color: #348bf2;
@@ -145,6 +147,9 @@
                     background-color: #fff;
                     float: left;
                     position: relative;
+                    & + li {
+                        margin-left: 23px;
+                    }
                     &:hover {
                         .mask-download {
                             top: 0 !important;
@@ -153,7 +158,7 @@
                         &.windows,
                         &.osx {
                             background-color: rgb(76, 140, 228) !important;
-                            transition: all 0.5s;
+                            transition: all 1s;
                             span {
                                 color: #ffffff !important;
                             }
@@ -230,7 +235,6 @@
             a {
                 font-size: 12px !important;
                 color: #91949b !important;
-                margin-top: 13px;
                 display: block;
             }
             .code-intro {

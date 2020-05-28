@@ -80,7 +80,7 @@
                 </div>
             </div>
         </div>
-        <div class="block-wrapper download" style="background-color:#fff;">
+        <div class="block-wrapper download" id="anchor" style="background-color:#fff;">
             <div class="block">
                 <div class="center">
                     <div class="title">
@@ -97,9 +97,15 @@
                                 >下载iPhone版</a
                             >
                             <div class="code-intro"></div>
-                            <div class="mask-download" style="top: 228px;">
-                                <img src="https://hi-fe-static.cdn.bcebos.com/office-site/data/img/QR_code-app.png" alt="" />
-                                <div class="download-text">扫描下载如流</div>
+                            <div class="mask-download">
+                                <a
+                                    onclick="_hmt.push(['_trackEvent', '首页', '点击', '下载iOS客户端'])"
+                                    href="//mobile.baidu.com/item?pid=178966"
+                                    target="_blank"
+                                >
+                                    <img src="https://hi-fe-static.cdn.bcebos.com/office-site/data/img/QR_code-app.png" alt="" />
+                                    <div class="download-text">扫描下载如流</div>
+                                </a>
                             </div>
                         </li>
                         <li class="android">
@@ -111,7 +117,7 @@
                                 >下载Android版</a
                             >
                             <div class="code-intro"></div>
-                            <div class="mask-download" style="top: 228px;">
+                            <div class="mask-download">
                                 <a
                                     onclick="_hmt.push(['_trackEvent', '首页', '点击', '下载Android客户端'])"
                                     href="//mobile.baidu.com/item?pid=178966"
@@ -122,7 +128,7 @@
                                 </a>
                             </div>
                         </li>
-                        <li class="windows" style="background-color: rgb(255, 255, 255);">
+                        <li class="windows">
                             <a
                                 onclick="_hmt.push(['_trackEvent', '首页', '点击', '下载Windows客户端'])"
                                 href="https://hi-static.cdn.bcebos.com/hi-official/infoflow_setup.exe"
@@ -138,7 +144,7 @@
                                 <div class="download-text">下载Windows版</div>
                             </a>
                         </li>
-                        <li class="osx" style="background-color: rgb(255, 255, 255);">
+                        <li class="osx">
                             <a
                                 onclick="_hmt.push(['_trackEvent', '首页', '点击', '下载Mac客户端(通用版)'])"
                                 href="https://hi-static.cdn.bcebos.com/hi-official/infoflow_setup.dmg"
@@ -161,26 +167,40 @@
     </div>
 </template>
 <script>
-import { statisticalData } from '@/api/index.js';
 
 export default {
     data() {
         return {
-            wrapHeight: window.innerHeight
+            wrapHeight: window.innerHeight,
+            headerStyle: false,
+            logoUrl: 'https://infoflow.baidu.com/2x/icon-logo.png',
+            lock: true,
+            loading:false
         };
     },
-    mounted() {
-        this.wrapHeight = window.innerHeight;
-        // this.slideHandle();
-    },
-    computed: {
+    created() {
+        this.bus.$emit('message', { headerStyle: this.headerStyle, logoUrl: this.logoUrl });
+        this.slideHandle();
+        window.scrollTo(0, 0);
     },
     methods: {
         slideHandle() {
-            window.onscroll = function() {
-                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-                console.log('滚动距离' + scrollTop);
+            window.onscroll = () => {
+                let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                let headerStyle = false;
+                let logoUrl = '';
+                if (this.wrapHeight <= scrollTop) {
+                    headerStyle = true;
+                    logoUrl = 'https://infoflow.baidu.com/2x/icon-logo-active.png';
+                } else {
+                    headerStyle = false;
+                    logoUrl = 'https://infoflow.baidu.com/2x/icon-logo.png';
+                }
+                this.bus.$emit('message', { headerStyle, logoUrl });
             };
+            window.addEventListener('resize', () => {
+                this.wrapHeight = window.innerHeight;
+            });
         }
     }
 };

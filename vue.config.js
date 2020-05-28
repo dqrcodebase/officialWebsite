@@ -1,16 +1,23 @@
 module.exports = {
-    assetsDir: 'public/guild',
-    publicPath:'/app',
+    assetsDir: '',
+    publicPath: './',
     productionSourceMap: false,
     devServer: {
-        proxy : {
-            '/api':{
-                target:'https://piao.qunar.com',
-                changeOrigin:true,
-                pathRewrite:{
-                    '^/api':''
+        proxy: {
+            '/api': {
+                target: 'https://gallery.echartsjs.com',
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/api': ''
+                }
+            },
+            '/v1': {
+                target: 'https://sgt.package.qunar.com',
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/v1': ''
                 }
             }
         }
     }
-}
+};

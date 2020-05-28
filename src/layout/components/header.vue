@@ -1,9 +1,11 @@
 <template>
     <el-header :class="{ 'header-style': headerStyle }">
         <el-image style="width: 114px; height: 28px;" :src="logoUrl"></el-image>
-        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
-            <el-menu-item index="1">首页</el-menu-item>
-            <el-menu-item index="2">首页</el-menu-item>
+        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" router="true">
+            <el-menu-item index="/home">首页</el-menu-item>
+            <el-menu-item index="/product">产品</el-menu-item>
+            <!-- <el-menu-item index="3">下载</el-menu-item> -->
+             <el-menu-item index="/distribution">分布</el-menu-item>
         </el-menu>
     </el-header>
 </template>
@@ -15,31 +17,19 @@ export default {
             activeIndex: '1',
             wrapHeight: window.innerHeight,
             headerStyle: false,
-            logoUrl: 'https://infoflow.baidu.com/2x/icon-logo.png'
+            logoUrl: 'https://infoflow.baidu.com/2x/icon-logo.png',
+            presentRoute: ''
         };
     },
-    mounted() {
-        this.slideHandle();
-        this.windowSizeChange();
+    created() {
+      this.presentRoute = this.$route.path
+        this.bus.$on('message', res => {
+            this.headerStyle = res.headerStyle;
+            this.logoUrl = res.logoUrl;
+        });
     },
     methods: {
-        slideHandle() {
-            window.onscroll = () => {
-                let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-                if (this.wrapHeight <= scrollTop) {
-                    this.headerStyle = true;
-                    this.logoUrl = 'https://infoflow.baidu.com/2x/icon-logo-active.png';
-                } else {
-                    this.headerStyle = false;
-                    this.logoUrl = 'https://infoflow.baidu.com/2x/icon-logo.png';
-                }
-            };
-        },
-        windowSizeChange() {
-            window.οnresize = () => {
-                console.log(3333);
-            };
-        }
+       
     }
 };
 </script>

@@ -1,8 +1,9 @@
 import request from '@/utils/request';
 
-export const statisticalData = query => {
-  return request({
-      url: '/api/daytrip/getCommentInfo.json?spuId=1717155&pageNum=1&pageSize=10&tagType=0',
-      method: 'get',
-  });
+export const atlas = query => {
+    return request({
+        url: '/asset/get/s/data-1528971808162-BkOXf61WX.json',
+        method: 'get'
+    });
 };
+

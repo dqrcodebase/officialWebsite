@@ -17,7 +17,17 @@ export default new Router({
                     path: '/home',
                     component: () => import('@/views/home'),
                     meta: { title: '首页' }
-                }
+                },
+                {
+                    path: '/product',
+                    component: () => import('@/views/product'),
+                    meta: { title: '产品' }
+                },
+                {
+                  path: '/distribution',
+                  component: () => import('@/views/distribution'),
+                  meta: { title: '分布' }
+              }
             ]
         },
         {
@@ -30,5 +40,5 @@ export default new Router({
             redirect: '/404'
         }
     ],
-    mode: 'history'
+    // mode: 'history'
 });

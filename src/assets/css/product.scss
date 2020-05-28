@@ -1,0 +1,122 @@
+.leftExtend {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    text-align: left;
+}
+.rightExtend {
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+
+.content-body {
+    .content {
+        .block-wrapper {
+            height: 700px;
+            text-align: center;
+            .block {
+                width: 1000px;
+                height: 100%;
+                margin: 0 auto;
+                position: relative;
+                display: inline-block;
+                .title {
+                    font-size: 36px;
+                    color: #348bf2;
+                }
+            }
+            &.find {
+                height: 645px;
+                .left {
+                    margin-top: -85px;
+                    @extend .leftExtend;
+                }
+                .right {
+                    @extend .rightExtend;
+                    margin-top: -175px;
+                    .img-find {
+                        background-image: url('https://infoflow.baidu.com/2x/features-find.png');
+                        display: inline-block;
+                        width: 366px;
+                        height: 346px;
+                        background-size: 100% 100%;
+                    }
+                }
+            }
+
+            &.groupchat {
+                background-color: #f6f6f6;
+                .top {
+                    text-align: center;
+                    margin-top: 50px;
+                }
+                .bottom {
+                    position: absolute;
+                    bottom: 47px;
+                    left: 50%;
+                    margin-left: -248px;
+                    .img-groupchat {
+                        background-image: url('https://infoflow.baidu.com/2x/features-groupchat.png');
+                        display: inline-block;
+                        width: 510px;
+                        height: 400px;
+                        background-size: 510px 400px;
+                    }
+                }
+            }
+            &.msgtranslate {
+                .right {
+                    @extend .rightExtend;
+                    margin-top: -212px;
+                    .img-msgtranslate {
+                        background-image: url('https://infoflow.baidu.com/2x/features-metting.png');
+                        display: inline-block;
+                        width: 550px;
+                        height: 400px;
+                        background-size: 100% 100%;
+                    }
+                }
+                .left {
+                    margin-top: -65px;
+                    @extend .leftExtend;
+                }
+            }
+            &.async {
+                background-color: #f6f6f6;
+                .left {
+                    @extend .leftExtend;
+                    top: 160px;
+                }
+                .right {
+                    @extend .rightExtend;
+                    margin-top: -212px;
+                    .img-async {
+                        background-image: url('https://infoflow.baidu.com/2x/features-netphone.png');
+                        display: inline-block;
+                        width: 424px;
+                        height: 496px;
+                        background-size: 100% 100%;
+                    }
+                }
+            }
+            &.netphone {
+                .left {
+                    margin-top: -65px;
+                    @extend .leftExtend;
+                }
+                .right {
+                    margin-top: -212px;
+                    @extend .rightExtend;
+                    .img-netphone {
+                        background-image: url('https://infoflow.baidu.com/2x/features-netphone.png');
+                        display: inline-block;
+                        width: 424px;
+                        height: 496px;
+                        background-size: 100% 100%;
+                    }
+                }
+            }
+        }
+    }
+}
