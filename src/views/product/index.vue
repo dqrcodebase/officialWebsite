@@ -1,93 +1,50 @@
 <template>
-    <div class="content-body" style="margin-top:60px">
+    <div class="content-body" style="margin-top: 60px">
         <div class="content">
             <div class="block-wrapper find">
                 <div class="block">
                     <div class="left">
-                        <div class="title">
-                            企业通讯录内搜到即聊
-                        </div>
-                        <p>
-                            所有员工信息统一管理，组织清晰
-                        </p>
-                        <p>
-                            搜索同事姓名，搜到即可发起聊天，不用加好友
-                        </p>
+                        <div class="title">协同化工单</div>
+                        <p>自定规则流转，灵活权限控制，多源统一处理，</p>
+                        <p>操作事件记录</p>
                     </div>
                     <div class="right" animation="" data-opacity="1" data-right="0px">
-                        <div class="img-find"></div>
+                        <img src="https://zhiqiu.baidu.com/platform/newimages/products-workorder.png" alt="">
                     </div>
                 </div>
             </div>
             <div class="block-wrapper groupchat">
                 <div class="block">
-                    <div class="top">
-                        <div class="title">
-                            企业群聊绿色围墙
-                        </div>
-                        <p>
-                            创建群聊简单便捷，只允许同企业员工加入
-                        </p>
-                        <p>
-                            员工离职会自动踢群，防止内部信息外泄
-                        </p>
+                    <div class="left" animation="" data-opacity="1" data-bottom="80px">
+                        <img src="https://zhiqiu.baidu.com/platform/newimages/products-robot.png" alt="">
                     </div>
-                    <div class="bottom" animation="" data-opacity="1" data-bottom="80px">
-                        <div class="img-groupchat"></div>
+                    <div class="right">
+                        <div class="title">智能机器人</div>
+                        <p>语义精准解析，多轮情景对话，动态条件答案，</p>
+                        <p>智能语音识别,7X24全天服务,人性化聊天库</p>
                     </div>
                 </div>
             </div>
-            <div class="block-wrapper msgtranslate">
+            <div class="block-wrapper find">
                 <div class="block">
-                    <div class="right" animation="" data-opacity="1" data-right="0px">
-                        <div class="img-msgtranslate"></div>
-                    </div>
                     <div class="left">
-                        <div class="title">
-                            消息自动翻译
-                        </div>
-                        <p>
-                            基于具备近三十种语言的百度机器翻译技术
-                        </p>
-                        <p>
-                            在即时通讯中实现自动翻译
-                        </p>
+                        <div class="title">自定义扩展</div>
+                        <p>自定义渠道，自定义接口，SSO单点登录，移</p>
+                        <p>动端SDK</p>
+                    </div>
+                    <div class="right" animation="" data-opacity="1" data-right="0px">
+                        <img src="https://zhiqiu.baidu.com/platform/newimages/products-extend.png" alt="">
                     </div>
                 </div>
             </div>
-            <div class="block-wrapper async">
+            <div class="block-wrapper groupchat">
                 <div class="block">
-                    <div class="left">
-                        <div class="title">
-                            多端消息同步
-                        </div>
-                        <p>
-                            支持Windows、Mac、Android、IOS间消息同步
-                        </p>
-                        <p>
-                            消息云端存储，聊天记录随时查看
-                        </p>
+                    <div class="left" animation="" data-opacity="1" data-bottom="80px">
+                        <img src="https://zhiqiu.baidu.com/platform/newimages/products-stat.png" alt="">
                     </div>
-                    <div class="right" animation="" data-opacity="1" data-right="0px">
-                        <div class="img-async"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="block-wrapper netphone">
-                <div class="block">
-                    <div class="left">
-                        <div class="title">
-                            网络电话
-                        </div>
-                        <p>
-                            高清语音通话，无需付费，随时随地开怀畅聊
-                        </p>
-                        <p>
-                            一键发起电话会议，轻松满足团队沟通需求
-                        </p>
-                    </div>
-                    <div class="right" animation="" data-opacity="1" data-right="0px">
-                        <div class="img-netphone"></div>
+                    <div class="right">
+                        <div class="title">多维度统计</div>
+                        <p>客服实时监控，人工会话统计，工单统计，机器人统计</p>
                     </div>
                 </div>
             </div>
@@ -96,7 +53,7 @@
 </template>
 
 <script>
-import echarts from 'echarts'
+import echarts from 'echarts';
 export default {
     data() {
         return {};
@@ -107,8 +64,7 @@ export default {
     methods: {
         init() {
             let headerStyle = true;
-            let logoUrl = 'https://infoflow.baidu.com/2x/icon-logo-active.png';
-            this.bus.$emit('message', { headerStyle, logoUrl });
+            this.bus.$emit('message', { headerStyle});
             window.onscroll = null;
             window.scrollTo(0, 0);
         }

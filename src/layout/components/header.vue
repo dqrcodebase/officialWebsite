@@ -1,6 +1,6 @@
 <template>
     <el-header :class="{ 'header-style': headerStyle }">
-        <el-image style="width: 114px; height: 28px;" :src="logoUrl"></el-image>
+        <el-image style="width: 84px; height: 68px;" :src="require('@/assets/images/logo.png')"></el-image>
         <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" router="true">
             <el-menu-item index="/home">首页</el-menu-item>
             <el-menu-item index="/product">产品</el-menu-item>
@@ -17,7 +17,7 @@ export default {
             activeIndex: '1',
             wrapHeight: window.innerHeight,
             headerStyle: false,
-            logoUrl: 'https://infoflow.baidu.com/2x/icon-logo.png',
+            logoUrl: '~@/assets/images/logo.png',
             presentRoute: ''
         };
     },

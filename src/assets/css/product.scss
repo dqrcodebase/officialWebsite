@@ -9,7 +9,6 @@
     right: 0;
     top: 50%;
 }
-
 .content-body {
     .content {
         .block-wrapper {
@@ -23,13 +22,13 @@
                 display: inline-block;
                 .title {
                     font-size: 36px;
-                    color: #348bf2;
+                    color: #303030;
                 }
             }
             &.find {
                 height: 645px;
                 .left {
-                    margin-top: -85px;
+                    transform: translate(-50%, -50%);
                     @extend .leftExtend;
                 }
                 .right {
@@ -47,17 +46,14 @@
 
             &.groupchat {
                 background-color: #f6f6f6;
-                .top {
-                    text-align: center;
-                    margin-top: 50px;
+                .right {
+                    @extend .rightExtend;
                 }
-                .bottom {
-                    position: absolute;
-                    bottom: 47px;
-                    left: 50%;
-                    margin-left: -248px;
+                .left {
+                    @extend .leftExtend;
+                    transform: translate(-50%, -50%);
                     .img-groupchat {
-                        background-image: url('https://infoflow.baidu.com/2x/features-groupchat.png');
+                        background-image: url('https://zhiqiu.baidu.com/platform/newimages/products-robot.png');
                         display: inline-block;
                         width: 510px;
                         height: 400px;
@@ -68,9 +64,9 @@
             &.msgtranslate {
                 .right {
                     @extend .rightExtend;
-                    margin-top: -212px;
+                    transform: translate(-50%, -50%);
                     .img-msgtranslate {
-                        background-image: url('https://infoflow.baidu.com/2x/features-metting.png');
+                        background-image: url('https://zhiqiu.baidu.com/platform/newimages/products-robot.png');
                         display: inline-block;
                         width: 550px;
                         height: 400px;
@@ -78,7 +74,7 @@
                     }
                 }
                 .left {
-                    margin-top: -65px;
+                    transform: translate(-50%, -50%);
                     @extend .leftExtend;
                 }
             }
@@ -90,7 +86,7 @@
                 }
                 .right {
                     @extend .rightExtend;
-                    margin-top: -212px;
+                    transform: translate(-50%, -50%);
                     .img-async {
                         background-image: url('https://infoflow.baidu.com/2x/features-netphone.png');
                         display: inline-block;
@@ -102,7 +98,7 @@
             }
             &.netphone {
                 .left {
-                    margin-top: -65px;
+                    transform: translate(-50%, -50%);
                     @extend .leftExtend;
                 }
                 .right {

@@ -2,7 +2,7 @@
     <div class="home">
         <div class="exhibition-warp" :style="{ height: wrapHeight + 'px' }">
             <el-image class="cursor" src="https://hi-fe-static.cdn.bcebos.com/office-site/data/img/cursor.gif"></el-image>
-            <el-image class="exhibition-img" src="https://infoflow.baidu.com/data/img/icon-banner-title.png"></el-image>
+            <el-image class="exhibition-img" src="https://zhiqiu.baidu.com/platform/newimages/product-banner.png"></el-image>
             <div class="shade"></div>
             <div class="shade-color"></div>
             <div class="exhibition"></div>
@@ -136,7 +136,7 @@
                                 ><img
                                     class="icon-mask"
                                     style="width:48px;height:50px;"
-                                    src="https://infoflow.baidu.com/2x/icon-app-download.png"
+                                    src="~@/assets/images/app.png"
                                     alt=""
                                 />
                                 <span class="icon"></span>
@@ -152,7 +152,7 @@
                                 ><img
                                     class="icon-mask"
                                     style="width:48px;height:50px;"
-                                    src="https://infoflow.baidu.com/2x/icon-app-download.png"
+                                    src="~@/assets/images/app.png"
                                     alt=""
                                 />
                                 <span class="icon"></span>
@@ -173,13 +173,12 @@ export default {
         return {
             wrapHeight: window.innerHeight,
             headerStyle: false,
-            logoUrl: 'https://infoflow.baidu.com/2x/icon-logo.png',
             lock: true,
             loading:false
         };
     },
     created() {
-        this.bus.$emit('message', { headerStyle: this.headerStyle, logoUrl: this.logoUrl });
+        this.bus.$emit('message', { headerStyle: this.headerStyle});
         this.slideHandle();
         window.scrollTo(0, 0);
     },
@@ -188,15 +187,12 @@ export default {
             window.onscroll = () => {
                 let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
                 let headerStyle = false;
-                let logoUrl = '';
                 if (this.wrapHeight <= scrollTop) {
                     headerStyle = true;
-                    logoUrl = 'https://infoflow.baidu.com/2x/icon-logo-active.png';
                 } else {
                     headerStyle = false;
-                    logoUrl = 'https://infoflow.baidu.com/2x/icon-logo.png';
                 }
-                this.bus.$emit('message', { headerStyle, logoUrl });
+                this.bus.$emit('message', { headerStyle });
             };
             window.addEventListener('resize', () => {
                 this.wrapHeight = window.innerHeight;
